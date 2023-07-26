@@ -1,0 +1,8 @@
+// C:\Users\Mark\IdeaProjects\lang\src\Bin\progs
+
+#[o] xor (a,b) {
+    @x1,x2;
+    x1 = !a & b;
+    x2 = a & !b;
+    o = x1 | x2;
+}

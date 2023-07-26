@@ -1,0 +1,24 @@
+#inc{func}
+
+#[u,c] add (a,b,ci) {
+    @o1,o2,o3;
+    o1 = $xor(a,b);
+    o2 = a&b;
+    u = $xor(o1,ci);
+    o3 = ci & o1;
+    c = o2 | o3;
+}
+
+#[u,c] add4 (a,b,ci) {
+    u = 0000;
+    u[0],c = $add(a[0],b[0],ci);
+    u[1],c = $add(a[1],b[1],c);
+    u[2],c = $add(a[2],b[2],c);
+    u[3],c = $add(a[3],b[3],c);
+}
+
+#[] count (o) {
+    @q;
+    o;
+    o,q = $add4(1000,o,0);
+}
